@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -24,11 +25,14 @@ class MyApp extends StatelessWidget {
       darkTheme:
           ThemeData(brightness: Brightness.dark, primarySwatch: Colors.yellow),
       // initialRoute: "/home",
+      debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) =>
             LoginPage(), // refer to home page but we already refer home page above itself
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        // "/home": (context) => HomePage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        // "/login": (context) => LoginPage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
