@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                           // ink well always work if material is ansistor
                           onTap: () => moveToHome(
                               context), // we defined move to Home  function above
-                              // '=>' arrow operator used when we need to return null in one line
+                          // '=>' arrow operator used when we need to return null in one line
                           // async {
 
                           // setState(() {
