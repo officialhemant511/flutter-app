@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -17,16 +18,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: HomePage(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: GoogleFonts.lato().fontFamily,
-        // primaryTextTheme: GoogleFonts.latoTextTheme()
-      ),
-      darkTheme:
-          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.yellow),
+      theme: MyTheme.lightTheme(context),
+      darkTheme:MyTheme.darkTheme(),
+          
 
-      initialRoute: MyRoutes.homeRoute, 
-      debugShowCheckedModeBanner: false,// it will remove the debug buttom from screen
+      initialRoute: MyRoutes.homeRoute,
+      debugShowCheckedModeBanner:
+          false, // it will remove the debug buttom from screen
 
       routes: {
         "/": (context) =>
