@@ -24,8 +24,10 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme:
           ThemeData(brightness: Brightness.dark, primarySwatch: Colors.yellow),
+
       initialRoute: MyRoutes.homeRoute, 
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,// it will remove the debug buttom from screen
+
       routes: {
         "/": (context) =>
             LoginPage(), // refer to home page but we already refer home page above itself

@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           // is size of device is small so it will be scroll
-          child: Form(
+          child: Form(// it will take a golobal key 
             key: _formKey,
             child: Column(
               children: [

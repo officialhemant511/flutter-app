@@ -20,9 +20,11 @@ class MyDrawer extends StatelessWidget {
                 // margin: EdgeInsets.zero,
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(
+
                     // decoration: BoxDecoration(
-                    //     // color: Colors.white,
-                    //     ),
+                    //   color: Colors.white,
+                    // ),
+
                     margin: EdgeInsets.zero,
                     accountName: Text(
                       "Hemant Bhatt",
@@ -34,13 +36,14 @@ class MyDrawer extends StatelessWidget {
                       backgroundImage: NetworkImage(imageUrl),
                     ))),
             ListTile(
+              //leading is generally used to give a icon and color .
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
               ),
               title: Text(
                 "Home",
-                textScaleFactor: 1.2,
+                textScaleFactor: 1.2, // size to our text
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
@@ -63,7 +66,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               title: Text(
-                "Email",
+                "Email me",
                 textScaleFactor: 1.2,
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
