@@ -1,5 +1,12 @@
+class CatalogModel {
+  static final items = [
+    Item(1, "iphone 12", "Apple iphone 12th generation", 999, "#33505a",
+        "https://m.media-amazon.com/images/I/71E5zB1qbIL._SL1500_.jpg")
+  ];
+}
+
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;

@@ -33,6 +33,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                     accountEmail: Text("officialhemant511@gmail.com "),
                     currentAccountPicture: CircleAvatar(
+                      radius: 76,
                       backgroundImage: NetworkImage(imageUrl),
                     ))),
             ListTile(
