@@ -16,7 +16,8 @@ class itemwidget extends StatelessWidget {
           onTap: () {
             print("${item.name} pressed");
           },
-          leading: Image.network(item.image),
+          leading: Image.network(item
+              .image), // this is the method to insert images from network...
           title: Text(item.name),
           subtitle: Text(item.desc),
           trailing: Text(
