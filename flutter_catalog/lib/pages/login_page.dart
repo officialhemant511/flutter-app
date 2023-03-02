@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
@@ -30,14 +31,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("MY APP"),
-          backgroundColor: Colors.deepPurple,
-        ),
-        backgroundColor: Colors.white,
+        // appBar: AppBar(
+        //   title: Text("MY APP"),
+        //   backgroundColor: Colors.deepPurple,
+        // ),
+        backgroundColor: context.theme.canvasColor,
         body: SingleChildScrollView(
           // is size of device is small so it will be scroll
-          child: Form(// it will take a golobal key 
+          child: Form(
+            // it will take a golobal key
             key: _formKey,
             child: Column(
               children: [
@@ -53,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      // fontFamily: GoogleFonts.lato().fontFamily, 
+                      // fontFamily: GoogleFonts.lato().fontFamily,
                     ),
                   ),
                   // width: 90.0,
@@ -112,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
 
                       Material(
-                        color: Colors.deepPurple,
+                        color: context.theme.shadowColor,
                         borderRadius:
                             BorderRadius.circular(changeButtom ? 50 : 8),
                         child: InkWell(

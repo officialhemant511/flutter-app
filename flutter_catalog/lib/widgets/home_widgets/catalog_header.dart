@@ -10,8 +10,8 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       children: [
         // Text("MY app")// same this as above
-        "My App".text.xl5.bold.color(MyTheme.darkBluishColor).make(),
-        "Treanding products".text.xl2.make(),
+        "My App".text.xl5.bold.color(context.theme.errorColor).make(),
+        "Treanding products".text.xl2.color(context.theme.errorColor).make(),
         // Text("MY app")// same this as above
       ],
     );

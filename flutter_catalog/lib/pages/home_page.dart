@@ -66,11 +66,15 @@ class _HomePageState extends State<HomePage> {
     // final dummy_lst = List.generate(4, (index) => CatalogModel.items[0]);
 
     return Scaffold(
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.cardColor,
         floatingActionButton: FloatingActionButton(
-            backgroundColor: MyTheme.darkBluishColor,
-            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-            child: Icon(CupertinoIcons.cart)),
+          backgroundColor: MyTheme.lightBluishColor,
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white ,
+          ),
+        ),
         body: SafeArea(
           child: Container(
             padding: Vx.m32,

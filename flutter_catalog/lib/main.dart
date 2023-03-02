@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: HomePage(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
+      // themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
-      darkTheme:MyTheme.darkTheme(),
-          
+      darkTheme: MyTheme.darkTheme(),
 
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       debugShowCheckedModeBanner:
           false, // it will remove the debug buttom from screen
 

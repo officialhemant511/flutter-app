@@ -16,10 +16,10 @@ class homeDetailsPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         // title: Text(catalog.name),
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.theme.canvasColor,
       // button bar for price and buy button
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -28,8 +28,8 @@ class homeDetailsPage extends StatelessWidget {
             ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.darkBluishColor),
+                        backgroundColor: MaterialStateProperty.all(
+                            context.theme.shadowColor),
                         shape: MaterialStateProperty.all(StadiumBorder())),
                     child: "Add to Cart".text.xl.make())
                 .wh(130, 50)
@@ -49,13 +49,11 @@ class homeDetailsPage extends StatelessWidget {
             arcType: VxArcType.CONVEY,
             edge: VxEdge.TOP,
             child: Container(
-              color: Colors.white,
+              color: context.cardColor,
               width: context.screenWidth,
               child: Column(
                 children: [
-                  catalog.name.text.bold.xl4
-                      .color(MyTheme.darkBluishColor)
-                      .make(),
+                  catalog.name.text.bold.xl4.color(context.accentColor).make(),
                   catalog.desc.text.xl.textStyle(context.captionStyle).make(),
                   10.heightBox,
                   "Erat vero diam stet nonumy duo rebum et rebum est, voluptua dolor duo magna voluptua. Voluptua sit aliquyam invidunt et accusam diam at sed nonumy, diam sadipscing rebum est et clita, sea sea ea tempor et ipsum sit sanctus, dolor elitr sit diam dolor, at kasd lorem accusam lorem erat."
