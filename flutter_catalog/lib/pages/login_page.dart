@@ -105,7 +105,6 @@ class _LoginPageState extends State<LoginPage> {
                           } else if (value.length < 8) {
                             return "password length should be atleast 8";
                           }
-
                           return null;
                         },
                       ),

@@ -7,10 +7,15 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.theme.canvasColor,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: "Cart".text.xl2.make().pOnly(left: 110),
+          title: "Cart"
+              .text
+              .color(context.theme.errorColor)
+              .xl2
+              .make()
+              .pOnly(left: 110),
         ),
       ),
     );
