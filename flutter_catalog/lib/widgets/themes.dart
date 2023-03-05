@@ -6,7 +6,7 @@ import 'package:velocity_x/velocity_x.dart';
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       primarySwatch: Colors.blue,
-      // cardColor: Colors.black, 
+      cardColor: Colors.black, 
       canvasColor: creamColor,
       errorColor: darkBluishColor,
       shadowColor: lightBluishColor,

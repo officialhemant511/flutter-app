@@ -24,7 +24,7 @@ class CartPage extends StatelessWidget {
           Divider(),
           _cartTotal(),
         ]),
-      ), 
+      ),
     );
   }
 }
@@ -40,7 +40,15 @@ class _cartTotal extends StatelessWidget {
           "\$9999".text.xl4.color(context.theme.shadowColor).make(),
           30.widthBox,
           ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        backgroundColor: context.canvasColor,
+                        content: "Buying not supproted yet"
+                            .text
+                            .xl
+                            .color(context.theme.cardColor)
+                            .make()));
+                  },
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(MyTheme.lightBluishColor)),
