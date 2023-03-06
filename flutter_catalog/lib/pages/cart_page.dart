@@ -31,14 +31,17 @@ class CartPage extends StatelessWidget {
 }
 
 class _cartTotal extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final _cart = CartModel();
     return SizedBox(
         height: 200,
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          "/${_cart.totalprice}".text.xl4.color(context.theme.shadowColor).make(),
+          "/${_cart.totalprice}"
+              .text
+              .xl4
+              .color(context.theme.shadowColor)
+              .make(),
           30.widthBox,
           ElevatedButton(
                   onPressed: () {
@@ -68,15 +71,20 @@ class __cartListState extends State<_cartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: _cart.items?.length,
-        itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
-              trailing: IconButton(
-                icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {},
-              ),
-              title: _cart.items[index].name.text.make(),
-            ));
+    return _cart.items.isEmpty
+        ? "Nothing To show".text.xl2.make().centered()
+        : ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+                  leading: Icon(Icons.done),
+                  trailing: IconButton(
+                    icon: Icon(Icons.remove_circle_outline),
+                    onPressed: () {
+                      _cart.remove(_cart.items[index]);
+                      setState(() {});
+                    },
+                  ),
+                  title: _cart.items[index].name.text.make(),
+                ));
   }
 }
