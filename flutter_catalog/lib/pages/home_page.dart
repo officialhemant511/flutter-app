@@ -1,10 +1,13 @@
 import 'dart:convert';
 import 'dart:typed_data';
+import 'package:http/http.dart' as http;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/core/store.dart';
+import 'package:flutter_catalog/models/cart.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -23,6 +26,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final int days = 30;
+
+  final url = "";
 
   final String name = "hello world";
 
@@ -45,9 +50,10 @@ class _HomePageState extends State<HomePage> {
     // this is now we put json file in flutter
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
+        final decodedData = jsonDecode(catalogJson);
     // here catalogjson will return a string formate output...
     // print(catalogJson);// to check weather it will give correct output or not...
-    final decodedData = jsonDecode(catalogJson);
+    
     //print(decodeData);// do hot restart for check
     //gives a map which is dynamic while decoding it will change string(catalogson) to map(decodedata)
     //vice versa in jsonEncode();--> map to string in encoded form
@@ -61,19 +67,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     // now we dont want any dummy list we have our own data so we remove-->
 
     // final dummy_lst = List.generate(4, (index) => CatalogModel.items[0]);
 
     return Scaffold(
         backgroundColor: context.cardColor,
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: MyTheme.lightBluishColor,
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          child: Icon(
-            CupertinoIcons.cart,
-            color: Colors.white ,
-          ),
+        floatingActionButton: VxBuilder(
+          mutations: {AddMutation, removeMutation},
+          builder: (context, _, Null) => FloatingActionButton(
+            backgroundColor: MyTheme.lightBluishColor,
+            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+            child: Icon(
+              CupertinoIcons.cart,
+              color: Colors.white,
+            ),
+          ).badge(color: Vx.red400, size: 15, count: _cart.items.length),
         ),
         body: SafeArea(
           child: Container(
